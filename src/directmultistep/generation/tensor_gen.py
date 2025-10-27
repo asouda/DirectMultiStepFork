@@ -350,9 +350,9 @@ class BeamSearchOptimized:
             beam_log_probs_W = torch.zeros(B * S, device=self.device)
 
         finished_sequences_W = torch.zeros(B * S, dtype=torch.bool, device=self.device)
-        logger.info(
-            f"Generating routes with beam size {S}. The progress bar may end early if all beams find end token."
-        )
+        #logger.info(
+        #    f"Generating routes with beam size {S}. The progress bar may end early if all beams find end token."
+        #)
         pbar: Iterable[int] = (
             tqdm(range(first_step, L - 1), dynamic_ncols=True) if progress_bar else range(first_step, L - 1)
         )
